@@ -26,13 +26,8 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        
-        Validator::extend('no_angle_brackets', function ($attribute, $value, $parameters, $validator) {
-            return !str_contains($value, ['<', '>']);
-        });
-
-        
+    {       
+ 
         DB::listen(function ($query) {
             // $query->sql
             // $query->bindings
